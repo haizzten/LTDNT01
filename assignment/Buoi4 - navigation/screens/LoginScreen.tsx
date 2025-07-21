@@ -14,7 +14,7 @@ const LoginScreen = ({ navigation }: Props) => {
 
     const handleLogin = () => {
         console.log('Login with', email, password);
-        navigation.navigate('MainTabs')
+        navigation.navigate('MainTabs', { email })
     };
 
     const handleSignUp = () => {
