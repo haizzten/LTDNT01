@@ -1,12 +1,18 @@
 // src/screens/ProfileScreen.tsx
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { RouteProp } from '@react-navigation/native';
+import { RootTabParamList } from '../types/navigation';
+type Props = {
+    route: RouteProp<RootTabParamList, 'Profile'>;
+};
 
-const ProfileScreen: React.FC = () => {
+const ProfileScreen: React.FC<Props> = ({ route }) => {
     // sau này dữ liệu user sẽ fetch từ API hoặc Redux
+    const { email } = route.params;
     const user = {
         name: 'Jane Doe',
-        email: 'janedoe@gmail.com',
+        email,
         avatar: 'https://i.pravatar.cc/300',
     };
 

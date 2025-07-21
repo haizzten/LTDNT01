@@ -4,7 +4,7 @@ import { NavigationProp, ParamListBase } from "@react-navigation/native"
 export type RootStackParamList = {
   Login: undefined;
   SignUp: undefined;
-  MainTabs: undefined;
+  MainTabs: { email: string };
 };
 
 export type RootTabParamList = {
