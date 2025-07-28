@@ -1,25 +1,14 @@
-// src/navigation/TabNavigator.tsx
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { RouteProp } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
 import CartScreen from '../screens/CartScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductList from '../../BT3/ProductList';
-import { RootStackParamList } from '../types/navigation';
+import { RootTabParamList, TabNavigatorProps } from '../types/navigation';
 
-export type RootTabParamList = {
-    Home: undefined;
-    Cart: undefined;
-    Profile: undefined;
-};
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
-
-type TabNavigatorProps = {
-    route: RouteProp<RootStackParamList, 'MainTabs'>;
-};
 
 const TabNavigator: React.FC<TabNavigatorProps> = ({ route }) => {
     const { email } = route.params;

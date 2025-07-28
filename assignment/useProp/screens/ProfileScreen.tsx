@@ -1,4 +1,3 @@
-// src/screens/ProfileScreen.tsx
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
@@ -8,7 +7,6 @@ type Props = {
 };
 
 const ProfileScreen: React.FC<Props> = ({ route }) => {
-    // sau này dữ liệu user sẽ fetch từ API hoặc Redux
     const { email } = route.params;
     const user = {
         name: 'Jane Doe',
@@ -19,7 +17,7 @@ const ProfileScreen: React.FC<Props> = ({ route }) => {
     return (
         <View style={styles.container}>
             <Image source={{ uri: user.avatar }} style={styles.avatar} />
-            <Text style={styles.name}>{user.name}</Text>
+            {/* <Text style={styles.name}>{user.name}</Text> */}
             <Text style={styles.email}>{user.email}</Text>
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Edit Profile</Text>
@@ -32,6 +30,7 @@ export default ProfileScreen;
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 80,
         flex: 1,
         padding: 24,
         alignItems: 'center',
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
         marginBottom: 4,
     },
     email: {
-        fontSize: 16,
+        fontSize: 22,
         color: '#666',
         marginBottom: 24,
     },

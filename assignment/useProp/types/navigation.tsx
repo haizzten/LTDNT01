@@ -1,5 +1,4 @@
-import { NavigationProp, ParamListBase } from "@react-navigation/native"
-
+import { RouteProp } from "@react-navigation/native";
 
 export type RootStackParamList = {
   Login: undefined;
@@ -10,5 +9,9 @@ export type RootStackParamList = {
 export type RootTabParamList = {
   Home: undefined;
   Cart: undefined;
-  Profile: undefined;
+  Profile:  { email: string };
+};
+
+export type TabNavigatorProps = {
+    route: RouteProp<RootStackParamList, 'MainTabs'>;
 };
